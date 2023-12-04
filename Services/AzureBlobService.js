@@ -27,7 +27,7 @@ export const download = async (blobName) => {
     const blockBlobClient = containerClient.getBlobClient(blobName);
 
     const timestamp = Date.now();    
-    const fileName = `my-new-file-${timestamp}.png`;
+    const fileName = `${timestamp}-${blobName}`;
     await blockBlobClient.downloadToFile(fileName);
     return fileName;
     
